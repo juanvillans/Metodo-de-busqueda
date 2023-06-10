@@ -37,8 +37,8 @@ function metodoDeBusqueda(mathfunction, xl, xu, e) {
         li.classList.add('pb-5')
         li.innerHTML = `
             <h2 class="text-xl">Iteración ${i} </h2>
-            <p>a = 0.618 * (${xu} - ${xl}) => <b>${a} </b> </p>
-            <p>b = 0.618 * (${a}) => <b>${b} </b> </p>
+            <p><span>a<span> = 0.618 * (${xu} - ${xl}) => <b>${a} </b> </p>
+            <p><span>b<span> = 0.618 * (${a}) => <b>${b} </b> </p>
             <p>x1 = ${xl} + ${a} => <b>${x1} </b> </p>
             <p>x2 = ${xl} + ${b} => <b>${x2} </b> </p>
             <p>f(x1) = ${mathfunction.replaceAll('x', x1)} => <b>${f1} </b> </p>
