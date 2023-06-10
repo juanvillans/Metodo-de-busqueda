@@ -32,20 +32,21 @@ function metodoDeBusqueda(mathfunction, xl, xu, e) {
         let f2 = math.evaluate(mathfunction.replaceAll('x', x2)).toFixed(4)
         let caso = f2 > f1 ? 1 : 2;
 
+        let restaX = +Math.abs(x2 - x1).toFixed(4)
 
         const li = document.createElement('li')
         li.classList.add('pb-5')
         li.innerHTML = `
             <h2 class="text-xl">Iteración ${i} </h2>
-            <p><span>a<span> = 0.618 * (${xu} - ${xl}) => <b>${a} </b> </p>
-            <p><span>b<span> = 0.618 * (${a}) => <b>${b} </b> </p>
-            <p>x1 = ${xl} + ${a} => <b>${x1} </b> </p>
-            <p>x2 = ${xl} + ${b} => <b>${x2} </b> </p>
+            <p><b class="text-emerald-800">a</b> = 0.618 * (${xu} - ${xl}) => <b class="text-emerald-800">${a} </b> </p>
+            <p><b class="text-indigo-950">b</b> = 0.618 * (${a}) => <b class="text-indigo-950" >${b} </b> </p>
+            <p><b class="text-pink-950"> x1</b> = ${xl} + <span class="text-emerald-800">${a}</span> => <b class="text-pink-950	">${x1} </b> </p>
+            <p><b class="text-yellow-900"> x2</b> = ${xl} + <span class="text-indigo-950">${b}</span> => <b class="text-yellow-900	">${x2} </b> </p>
             <p>f(x1) = ${mathfunction.replaceAll('x', x1)} => <b>${f1} </b> </p>
             <p>f(x2) = ${mathfunction.replaceAll('x', x2)} => <b>${f2} </b> </p>
-            <p>caso: <b>#${caso === 1 ? 'caso 1, f2 > 1' : 'caso 2, f2 < f1'}</b> </p>
+            <p>caso: #${caso === 1 ? "1, porque f2 > f1. Entonces xu = "+  +x1.toFixed(4): '2, porque f2 < f1. Entonces xl = '+ +x1.toFixed(4) }</b> </p>
 
-            <p>Restar x2 - x1: ${x2} - ${x1} = ${(x2-x1).toFixed(4)} ${Math.abs(x2 - x1) < e ? ', ¡El búcle se detiene!' : ', es mayor que e. El bucle continua  '}</p>
+            <p>Restar x2 - x1: ${x2} - ${x1} = ${restaX} ${restaX < e ? ', ¡El búcle se detiene!' : ', El bucle continua  '}</p>
         `
         list_result.append(li)
     
@@ -56,7 +57,7 @@ function metodoDeBusqueda(mathfunction, xl, xu, e) {
         }
         // console.log({x1, x2, f1, f2, caso});
         // if (i == 100) break;
-        if (Math.abs(x2 - x1) < e) {
+        if (restaX < e) {
             break;
         }
        
