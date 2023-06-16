@@ -44,7 +44,7 @@ function metodoDeBusqueda(mathfunction, xl, xu, e) {
             <p><b class="text-yellow-900"> x2</b> = ${xl} + <span class="text-indigo-950">${b}</span> => <b class="text-yellow-900	">${x2} </b> </p>
             <p>f(x1) = ${mathfunction.replaceAll('x', x1)} => <b>${f1} </b> </p>
             <p>f(x2) = ${mathfunction.replaceAll('x', x2)} => <b>${f2} </b> </p>
-            <p>caso: #${caso === 1 ? "1, porque f2 > f1. Entonces xl ="+ xl +" y xu = "+  +x1.toFixed(4): '2, porque f2 < f1. Entonces xl = '+ +x1.toFixed(4)+ 'y xu ='+ xu }</b> </p>
+            <p>caso: #${caso === 1 ? "1, porque f2 > f1. Entonces xl ="+ xl +",  y xu = "+  +x1.toFixed(4): '2, porque f2 < f1. Entonces xl = '+ +x1.toFixed(4)+ 'y xu ='+ xu }</b> </p>
 
             <p>Restar x2 - x1: ${x2} - ${x1} = ${restaX} ${restaX < e ? ', ¡El búcle se detiene!' : ', El bucle continua  '}</p>
         `
